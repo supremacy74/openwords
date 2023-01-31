@@ -1,0 +1,63 @@
+.nav {
+    position: fixed;
+    top: -5000px;
+    right: 0;
+    background: var(--secondary);
+    backdrop-filter: blur(50px);
+    z-index: 50;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding: 50px 0;
+}
+
+@media (min-width: 768px) {
+    .nav {
+        width: min(100%, 580px);
+    }
+}
+
+.visible {
+    top: 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menuIconWrapper {
+    cursor: pointer;
+    position: fixed;
+    z-index: 55;
+    top: 10px;
+    right: 15px;
+}
+
+.menuIconWrapper_color_primary > svg {
+    fill: var(--primary);
+}
+
+.menuIconWrapper:hover > svg {
+    fill: var(--accent);
+}
+
+@media (min-width: 992px) {
+    .nav {
+        position: static;
+        background: none;
+        min-height: fit-content;
+        width: fit-content;
+        padding: 0;
+    }
+
+    .list {
+        flex-direction: row;
+        gap: 35px;
+    }
+
+    .menuIconWrapper {
+        display: none;
+    }
+}

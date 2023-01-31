@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    width: min(100%, 500px);
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+@media (min-width: 768px) {
+    .many {
+        width: min(100%, 1500px);
+    }
+
+    .many .items {
+        align-items: center;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

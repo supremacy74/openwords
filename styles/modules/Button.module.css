@@ -1,0 +1,19 @@
+.button {
+    border: .025rem solid var(--secondary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .button {
+        width: fit-content;
+    }
+}
+
+.button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--secondary);
+}
+

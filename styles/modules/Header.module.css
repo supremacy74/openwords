@@ -1,0 +1,24 @@
+.header {
+    padding: 25px 0;
+}
+
+.link {
+    width: 100%;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+
+
+

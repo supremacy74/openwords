@@ -1,0 +1,45 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.input {
+    border-bottom: .05rem solid var(--secondary);
+    padding: 10px 0;
+}
+
+.input:focus {
+    border-radius: 50px;
+    border: .15rem solid var(--accent);
+    padding: 15px 20px;
+}
+
+.input:focus ~ .label {
+    font-size: 15px;
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    background: var(--primary);
+    padding: 0 15px;
+    color: var(--accent);
+}
+
+.input:focus ~ .visibilityIconWrapper {
+    top: 55%;
+    right: 15px;
+}
+
+.visibilityIconWrapper {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.visibilityIconWrapper:hover {
+    filter: brightness(75%);
+}
+

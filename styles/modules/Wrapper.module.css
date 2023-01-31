@@ -1,0 +1,8 @@
+.wrapper {
+    min-height: 100vh;
+    background: var(--primary);
+}
+
+.main {
+    margin-top: 60px;
+}

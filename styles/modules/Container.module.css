@@ -1,0 +1,11 @@
+.container {
+    margin: 0 auto;
+    width: min(100%, 1320px);
+    padding: 0 15px;
+}
+
+.isWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

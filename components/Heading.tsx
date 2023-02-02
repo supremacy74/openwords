@@ -1,9 +1,12 @@
 import React from 'react'
 
-import styles from '../styles/modules/Heading.module.css'
+import styles from '@/styles/modules/Heading.module.css'
+
 import HeadingInterface from '@/interfaces/HeadingInterface'
 
-const Heading = ({ priority, children }: HeadingInterface) => {
+interface Props extends HeadingInterface {}
+
+const Heading: React.FC<Props> = ({ priority, children }) => {
     const Tag = `h${priority}`
 
     return <Tag className={`${styles.heading} ${styles[Tag]}`}>{children}</Tag>

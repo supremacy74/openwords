@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 
 type Data = {
@@ -8,9 +7,9 @@ type Data = {
 
 const dictionary = {
     id: 0,
-    name: 'main',
+    name: 'some',
     words: [
-        'some',
+        'main',
         'basic',
         'feature',
         'body',

@@ -1,0 +1,22 @@
+.translation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.top > span {
+    color: var(--accent);
+    background: var(--transparent-accent-100);
+    padding: 5px 10px;
+    border-radius: 100px;
+}
+
+.bottom {
+    margin: 0 10px;
+}

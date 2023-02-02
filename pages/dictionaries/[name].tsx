@@ -1,25 +1,39 @@
 import React, { useEffect } from 'react'
+
 import axios from 'axios'
+
+import { useDispatch, useSelector } from 'react-redux'
+
+import styles from '@/styles/modules/Dictionary.module.css'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 
+import get from '@/lib/get'
+
+import { RootState } from '@/store'
+
+import Wrapper from '@/layouts/Wrapper'
+import Container from '@/layouts/Container'
+
+import Heading from '@/components/Heading'
+import Card from '@/components/Card'
+
 const url = 'http://localhost:3000/api/dictionaries'
 
-const get = async (url: string) => {
-    try {
-        const response = await axios.get(url)
-        return response.data
-    } catch (e) {
-        console.error(e)
-        return []
-    }
-}
+const Name: React.FC<DictionaryInterface> = ({ name, words }) => {
+    const dispatch = useDispatch()
 
-const DictionaryId: React.FC<DictionaryInterface> = ({ id, name, words }) => {
+    const index = useSelector((state: RootState) => state.dictionary.index)
+
     return (
-        <div>
-            <h1>{name}</h1>
-        </div>
+        <Wrapper>
+            <Container>
+                <div className={styles.inner}>
+                    <Heading priority={1}>{name}</Heading>
+                    <Card word={words[0]} />
+                </div>
+            </Container>
+        </Wrapper>
     )
 }
 
@@ -68,4 +82,4 @@ export const getStaticProps = async ({
     }
 }
 
-export default DictionaryId
+export default Name

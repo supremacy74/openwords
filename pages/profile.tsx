@@ -1,9 +1,11 @@
-import Wrapper from '@/layouts/Wrapper'
 import React from 'react'
 
 import styles from '../styles/modules/Profile.module.css'
-import Heading from '@/components/Heading'
+
+import Wrapper from '@/layouts/Wrapper'
 import Container from '@/layouts/Container'
+
+import Heading from '@/components/Heading'
 
 const Profile = () => {
     return (

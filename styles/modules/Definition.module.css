@@ -1,0 +1,26 @@
+.definition {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.translations {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.main {
+    font-weight: 500;
+}
+
+.additional {
+    font-size: 15px;
+    color: var(--transparent-secondary-950)
+}

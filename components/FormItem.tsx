@@ -1,11 +1,15 @@
 import React, { useState, useRef, MouseEventHandler } from 'react'
 
-import styles from '../styles/modules/FormItem.module.css'
+import styles from '@/styles/modules/FormItem.module.css'
+
 import FormItemInterface from '@/interfaces/FormItemInterface'
+
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 
-const FormItem = ({ title, type, isFocused, hint }: FormItemInterface) => {
+interface Props extends FormItemInterface {}
+
+const FormItem: React.FC<Props> = ({ title, type, isFocused, hint }) => {
     const [isVisible, setIsVisible] = useState(
         type === 'password' ? false : true
     )

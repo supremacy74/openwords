@@ -1,9 +1,12 @@
 import React from 'react'
+
 import styles from '../styles/modules/Register.module.css'
+
 import Wrapper from '@/layouts/Wrapper'
+import Container from '@/layouts/Container'
+
 import Heading from '@/components/Heading'
 import Form from '@/components/Form'
-import Container from '@/layouts/Container'
 
 const formItems = [
     {

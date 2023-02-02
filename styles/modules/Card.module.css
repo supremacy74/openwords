@@ -1,0 +1,77 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.part, .top {
+    display: flex;
+    flex-direction: column;
+}
+
+.part {
+    gap: 50px;
+}
+
+.top {
+    gap: 25px;
+}
+
+.word {
+    font-size: 5.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    color: var(--secondary);
+    border-bottom: .025rem solid var(--secondary);
+    padding: 5px 0;
+    width: min(100%, 500px);
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.input:focus {
+    border-color: var(--accent);
+}
+
+.label {
+    font-size: .85rem;
+    color: var(--transparent-secondary-950);
+}
+
+.dictionary {
+    display: flex;
+    flex-direction: column;
+    gap: 125px;
+}
+
+@media (min-width: 576px) {
+    /*.buttons {*/
+    /*    flex-direction: row;*/
+    /*}*/
+}
+
+@media (min-width: 768px) {
+    .input {
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        gap: 25px;
+    }
+}

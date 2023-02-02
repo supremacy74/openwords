@@ -10,7 +10,8 @@ const formItems = [
         id: 0,
         title: 'Email',
         type: 'email',
-        hint: 'Enter your email.'
+        hint: 'Enter your email.',
+        isFocused: true
     },
     {
         id: 1,

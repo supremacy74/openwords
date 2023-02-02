@@ -13,9 +13,12 @@ const dark = `
         
         --transparent-primary-500: #05050550;
         --transparent-secondary-500: #f5f5f550;
+
+        --transparent-accent-300: #ff009530;
         
         --transparent-primary-100: #05050510;
         --transparent-secondary-100: #f5f5f525;
+        --transparent-accent-100: #ff009510;
     }
 `
 
@@ -31,13 +34,16 @@ const light = `
         --transparent-primary-500: #f5f5f550;        
         --transparent-secondary-500: #05050550;
         
+        --transparent-accent-200: #ff959520;
+        
         --transparent-primary-100: #f5f5f510;        
         --transparent-secondary-100: #05050510;
+        --transparent-accent-100: #ff959510;
     }
 `
 
 export default function Document() {
-    const [theme, setTheme] = useState('dark')
+    const [theme, setTheme] = useState('light')
 
     return (
         <Html lang="en">

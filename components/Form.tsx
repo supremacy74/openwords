@@ -1,17 +1,23 @@
 import React from 'react'
-import styles from '../styles/modules/Form.module.css'
+
+import styles from '@/styles/modules/Form.module.css'
+
 import FormItemInterface from '@/interfaces/FormItemInterface'
-import FormItem from '@/components/FormItem'
 import FormInterface from '@/interfaces/FormInterface'
+
+import FormItem from '@/components/FormItem'
 import Button from '@/components/Button'
 
-const Form = ({ items, buttonText }: FormInterface) => {
+interface Props extends FormInterface {}
+
+const Form: React.FC<Props> = ({ items, buttonText }) => {
     return (
         <form className={`${styles.form} ${items.length > 3 && styles.many}`}>
             <div className={styles.items}>
-                {items.map((item: FormItemInterface) => {
+                {items.map((item: FormItemInterface, index: number) => {
                     return (
                         <FormItem
+                            key={index}
                             title={item.title}
                             type={item.type}
                             isFocused={item.isFocused}

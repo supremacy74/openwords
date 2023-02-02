@@ -1,0 +1,5 @@
+.inner {
+    flex-direction: column;
+    display: flex;
+    gap: 50px;
+}

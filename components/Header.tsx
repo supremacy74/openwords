@@ -1,19 +1,21 @@
-import styles from '../styles/modules/Header.module.css'
-import Container from '@/layouts/Container'
+import React, { useState } from 'react'
+
 import Link from 'next/link'
-import Button from '@/components/Button'
+
+import { useSelector } from 'react-redux'
+
+import styles from '@/styles/modules/Header.module.css'
+
+import { RootState } from '@/store'
+
+import Container from '@/layouts/Container'
+
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
-import { useDispatch, useSelector } from 'react-redux'
-import React, { useState } from 'react'
+
 import Nav from '@/components/Nav'
-import { RootState } from '@/store'
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
 
 const Header = () => {
-    const dispatch = useDispatch()
-
     const base = useSelector((state: RootState) => state.nav.base)
     const authorized = useSelector((state: RootState) => state.nav.authorized)
     const unauthorized = useSelector(

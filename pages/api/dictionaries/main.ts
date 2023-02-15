@@ -9,18 +9,7 @@ type Data = {
 const dictionary = {
     id: 0,
     name: 'main',
-    words: [
-        'some',
-        'basic',
-        'feature',
-        'body',
-        'simple',
-        'brother',
-        'rather',
-        'small',
-        'fuck',
-        'nigga'
-    ]
+    words: []
 }
 
 export default function handler(

@@ -1,5 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+interface NavItem {
+    id: number
+    label: string
+    link: string
+}
+
+interface NavState {
+    items: Array<NavItem>
+    base: Array<NavItem>
+    authorized: Array<NavItem>
+    unauthorized: Array<NavItem>
+}
+
 const navSlice = createSlice({
     name: 'nav',
     initialState: {
@@ -9,27 +22,30 @@ const navSlice = createSlice({
                 id: 0,
                 label: 'Главная',
                 link: '/'
+            },
+            {
+                id: 1,
+                label: 'Словари',
+                link: '/dictionaries'
             }
         ],
         authorized: [
             {
-                id: 1,
+                id: 2,
                 label: 'Профиль',
                 link: '/profile'
             }
         ],
         unauthorized: [
             {
-                id: 2,
+                id: 3,
                 label: 'Вход',
-                link: '/login',
-                isButton: true
+                link: '/login'
             },
             {
-                id: 3,
+                id: 4,
                 label: 'Регистрация',
-                link: '/register',
-                isButton: true
+                link: '/register'
             }
         ]
     },

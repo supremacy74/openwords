@@ -18,7 +18,7 @@ const dictionary = {
         'rather',
         'small',
         'fuck',
-        'nigga'
+        'go out'
     ]
 }
 

@@ -14,6 +14,14 @@ const dictionaries = [
     {
         id: 1,
         name: 'some'
+    },
+    {
+        id: 2,
+        name: '100'
+    },
+    {
+        id: 3,
+        name: '500'
     }
 ]
 

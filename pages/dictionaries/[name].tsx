@@ -21,16 +21,12 @@ import Card from '@/components/Card'
 const url = 'http://localhost:3000/api/dictionaries'
 
 const Name: React.FC<DictionaryInterface> = ({ name, words }) => {
-    const dispatch = useDispatch()
-
-    const index = useSelector((state: RootState) => state.dictionary.index)
-
     return (
         <Wrapper>
             <Container>
                 <div className={styles.inner}>
                     <Heading priority={1}>{name}</Heading>
-                    <Card word={words[0]} />
+                    <Card words={words} />
                 </div>
             </Container>
         </Wrapper>
@@ -42,7 +38,7 @@ interface Path {
 }
 
 interface Paths {
-    paths: Path[]
+    paths: Array<Path>
     fallback: boolean
 }
 

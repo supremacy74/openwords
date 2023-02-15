@@ -1,5 +1,5 @@
 export default (dictionary: any) => {
-    const values: any[] = []
+    const values: Array<string> = []
 
     dictionary.def.forEach((definition: any) => {
         definition.tr.forEach((translation: any) => {

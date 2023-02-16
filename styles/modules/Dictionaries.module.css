@@ -1,0 +1,11 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.dictionaries {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

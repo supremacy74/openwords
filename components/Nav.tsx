@@ -12,7 +12,7 @@ import NavItem from '@/components/NavItem'
 
 interface Props extends NavInterface {}
 
-const Nav: React.FC<Props> = ({ items }) => {
+const Nav: React.FC<Props> = ({ base, items }) => {
     const [isVisible, setIsVisible] = useState(false)
 
     return (
@@ -26,6 +26,18 @@ const Nav: React.FC<Props> = ({ items }) => {
                 {isVisible ? <CloseIcon /> : <MenuIcon />}
             </div>
             <nav className={`${styles.nav} ${isVisible && styles.visible}`}>
+                <ul className={styles.list}>
+                    {base.map((item: NavItemInterface) => {
+                        return (
+                            <NavItem
+                                key={item.id}
+                                label={item.label}
+                                link={item.link}
+                            />
+                        )
+                    })}
+                </ul>
+                |
                 <ul className={styles.list}>
                     {items.map((item: NavItemInterface) => {
                         return (

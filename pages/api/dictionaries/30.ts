@@ -7,9 +7,20 @@ type Data = {
 }
 
 const dictionary = {
-    id: 0,
-    name: 'main',
-    words: []
+    id: 30,
+    name: 'some',
+    words: [
+        'main',
+        'basic',
+        'feature',
+        'body',
+        'simple',
+        'brother',
+        'rather',
+        'small',
+        'fuck',
+        'go out'
+    ]
 }
 
 export default function handler(

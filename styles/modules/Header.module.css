@@ -18,6 +18,18 @@
     gap: 15px;
 }
 
+.logo {
+    font-size: 1.75rem;
+    font-weight: 400;
+    background: linear-gradient(to right, rgba(200, 250, 255), rgba(200, 200, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: difference;
+    letter-spacing: .15rem;
+    font-family: 'GT Walsheim', sans-serif;
+}
+
+
 
 
 

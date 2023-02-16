@@ -1,1 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Ultra-Light-Trial.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Thin-Trial.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Light-Trial.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Regular-Trial.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Medium-Trial.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Bold-Trial.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Black-Trial.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('../fonts/GT-Walsheim/GT-Walsheim-Ultra-Bold-Trial.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}

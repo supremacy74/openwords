@@ -1,29 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import DictionaryInterface from '@/interfaces/DictionaryInterface'
+import DemoInterface from '@/interfaces/DemoInterface'
+
+import src from '@/images/some.jpg'
 
 type Data = {
-    dictionaries: any
+    dictionaries: Array<number>
 }
 
-const dictionaries = [
-    {
-        id: 0,
-        name: 'main'
-    },
-    {
-        id: 1,
-        name: 'some'
-    },
-    {
-        id: 2,
-        name: '100'
-    },
-    {
-        id: 3,
-        name: '500'
-    }
-]
+const dictionaries = [0, 4, 30]
 
 export default function handler(
     req: NextApiRequest,

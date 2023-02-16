@@ -22,20 +22,18 @@ const Header = () => {
         (state: RootState) => state.nav.unauthorized
     )
 
-    const [items, setItems] = useState([
-        ...base,
-        ...authorized,
-        ...unauthorized
-    ])
+    const [items, setItems] = useState([...authorized, ...unauthorized])
 
     return (
         <header className={styles.header}>
             <Container>
                 <div className={styles.inner}>
                     <div className={styles.top}>
-                        <Link href="/">openwords</Link>
+                        <Link className={styles.logo} href="/">
+                            openwords
+                        </Link>
                     </div>
-                    <Nav items={items} />
+                    <Nav base={base} items={items} />
                 </div>
             </Container>
         </header>

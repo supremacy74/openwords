@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import styles from '@/styles/modules/Dictionary.module.css'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
+import DemoInterface from '@/interfaces/DemoInterface'
 
 import get from '@/lib/get'
 
@@ -18,9 +19,9 @@ import Container from '@/layouts/Container'
 import Heading from '@/components/Heading'
 import Card from '@/components/Card'
 
-const url = 'http://localhost:3000/api/dictionaries'
+const url = `http://localhost:3000/api/dictionaries`
 
-const Name: React.FC<DictionaryInterface> = ({ name, words }) => {
+const Dictionary: React.FC<DictionaryInterface> = ({ name, words }) => {
     return (
         <Wrapper>
             <Container>
@@ -45,13 +46,9 @@ interface Paths {
 export const getStaticPaths = async (): Promise<Paths> => {
     const data = await get(url)
     const dictionaries = data.dictionaries
-    const paths = dictionaries.map((dictionary: DictionaryInterface) => {
-        return {
-            params: {
-                name: dictionary.name
-            }
-        }
-    })
+    const paths = dictionaries.map((id: number) => ({
+        params: { id: String(id) }
+    }))
 
     return {
         paths,
@@ -66,9 +63,9 @@ interface Props {
 export const getStaticProps = async ({
     params
 }: {
-    params: { name: string }
+    params: { id: string }
 }): Promise<Props> => {
-    const data = await get(`${url}/${params.name}`)
+    const data = await get(`${url}/${params.id}`)
     const dictionary = data.dictionary
 
     return {
@@ -78,4 +75,4 @@ export const getStaticProps = async ({
     }
 }
 
-export default Name
+export default Dictionary

@@ -7,7 +7,7 @@ import axios from 'axios'
 import styles from '@/styles/modules/Card.module.css'
 
 import CardInterface from '@/interfaces/CardInterface'
-import ResultInterface from '@/interfaces/ResultInterface'
+
 import { Dictionary } from '@/interfaces/Yandex.Dictionary/Dictionary'
 
 import { RootState } from '@/store'
@@ -100,7 +100,7 @@ const Card: React.FC<Props> = ({ words }) => {
 
         setTranslation('')
 
-        setIndex(index === words.length - 1 ? 0 : index + 1)
+        hasValue && setIndex(index === words.length - 1 ? 0 : index + 1)
 
         check(hasValue)
     }

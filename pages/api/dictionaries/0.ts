@@ -4,6 +4,8 @@ import DictionaryInterface from '@/interfaces/DictionaryInterface'
 
 import get from '@/lib/get'
 
+import src from '@/images/some.jpg'
+
 type Data = {
     dictionary: DictionaryInterface
 }
@@ -18,7 +20,7 @@ export default async function handler(
         words: []
     }
 
-    const data = await get('http://localhost:3000/api/dictionaries/all')
+    const data = await get(`http://localhost:3000/api/dictionaries/all`)
 
     dictionary.words = data.dictionary.words.slice(0, 100)
 

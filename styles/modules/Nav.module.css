@@ -2,9 +2,9 @@
     position: fixed;
     top: -5000px;
     right: 0;
-    background: var(--secondary);
+    background: linear-gradient(to top, rgba(200, 250, 255, .5), rgba(200, 200, 255, .5));
     backdrop-filter: blur(50px);
-    z-index: 50;
+    z-index: 45;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -29,18 +29,17 @@
 
 .menuIconWrapper {
     cursor: pointer;
-    position: fixed;
-    z-index: 55;
-    top: 10px;
+}
+
+.menuIconWrapper:hover {
+    filter: invert(25%);
+}
+
+.menuIconWrapper_color_primary {
+    z-index: 50;
+    top: 25px;
     right: 15px;
-}
-
-.menuIconWrapper_color_primary > svg {
-    fill: var(--primary);
-}
-
-.menuIconWrapper:hover > svg {
-    fill: var(--accent);
+    position: fixed;
 }
 
 @media (min-width: 992px) {
@@ -48,11 +47,14 @@
         position: static;
         background: none;
         min-height: fit-content;
-        width: fit-content;
         padding: 0;
+        justify-content: space-between;
+        width: fit-content;
+        gap: 50px;
     }
 
     .list {
+        width: fit-content;
         flex-direction: row;
         gap: 35px;
     }

@@ -6,10 +6,14 @@ import HeadingInterface from '@/interfaces/HeadingInterface'
 
 interface Props extends HeadingInterface {}
 
-const Heading: React.FC<Props> = ({ priority, children }) => {
+const Heading: React.FC<Props> = ({ className, priority, children }) => {
     const Tag = `h${priority}`
 
-    return <Tag className={`${styles.heading} ${styles[Tag]}`}>{children}</Tag>
+    return (
+        <Tag className={`${className} ${styles.heading} ${styles[Tag]}`}>
+            {children}
+        </Tag>
+    )
 }
 
 export default Heading

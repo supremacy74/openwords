@@ -87,11 +87,7 @@ const DictionaryCard: React.FC<Props> = ({ id }) => {
     const { data: dictionary, isFetching } = useGetDictionaryQuery(String(id))
 
     if (isFetching) {
-        if (id === 0) {
-            return <div>Loading</div>
-        } else {
-            return
-        }
+        return <div>Loading</div>
     }
 
     return (

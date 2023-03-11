@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -32,8 +32,6 @@ const Pop = () => {
             const fetchData = async () => {
                 const data = await confirm(email, value)
 
-                console.log(data)
-
                 if (data) {
                     dispatch(setIsHidden())
 
@@ -51,7 +49,7 @@ const Pop = () => {
         }
     }, [value])
 
-    const onClick = (event) => {
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setIsWrong(false)
         setValue(event.target.value)
     }
@@ -75,7 +73,7 @@ const Pop = () => {
                             value={value}
                             type="text"
                             maxLength={5}
-                            onChange={onClick}
+                            onChange={onChange}
                         />
                         <p
                             className={`${styles.title} ${

@@ -28,6 +28,7 @@ const Card: React.FC<Props> = ({ words }) => {
     const [values, setValues] = useState<Array<string>>([])
     const [dictionary, setDictionary] = useState<Dictionary>({})
     const [isHidden, setIsHidden] = useState<boolean>(true)
+    const [isWrong, setIsWrong] = useState<boolean>(false)
 
     const [params, setParams] = useState({
         key: 'dict.1.1.20230131T081417Z.94c5cde3fa74b95d.dbca5f45af9b01f9de8942c926115434de42c38f',
@@ -76,6 +77,7 @@ const Card: React.FC<Props> = ({ words }) => {
     useEffect(() => {
         if (dictionary.def) {
             setValues(parse(dictionary))
+            console.log(dictionary)
         }
     }, [dictionary])
 
@@ -100,7 +102,12 @@ const Card: React.FC<Props> = ({ words }) => {
 
         setTranslation('')
 
-        hasValue && setIndex(index === words.length - 1 ? 0 : index + 1)
+        if (hasValue) {
+            setIndex(index === words.length - 1 ? 0 : index + 1)
+            setIsWrong(false)
+        } else {
+            setIsWrong(true)
+        }
 
         check(hasValue)
     }
@@ -126,12 +133,15 @@ const Card: React.FC<Props> = ({ words }) => {
                         <input
                             type="text"
                             id="translation"
-                            className={styles.input}
+                            className={`${styles.input} ${
+                                isWrong && styles.wrong
+                            }`}
                             autoFocus={true}
                             value={translation}
-                            onChange={(event) =>
+                            onChange={(event) => {
                                 setTranslation(event.target.value)
-                            }
+                                setIsWrong(false)
+                            }}
                         />
                         <label htmlFor="translation" className={styles.label}>
                             Введите перевод.

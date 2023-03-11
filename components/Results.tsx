@@ -71,19 +71,23 @@ const Results: React.FC<Props> = ({ init }) => {
                             <div>Кол. во правильных</div>
                             <div>Кол. во неправильных</div>
                         </div>
-                        {values.map((result) => {
-                            return (
-                                <div
-                                    key={result.word}
-                                    className={styles.values}
-                                >
-                                    <div>{result.word}</div>
-                                    <div>{result.attempts}</div>
-                                    <div>{result.correct}</div>
-                                    <div>{result.wrong}</div>
-                                </div>
-                            )
-                        })}
+                        {values.length > 0 ? (
+                            values.map((result) => {
+                                return (
+                                    <div
+                                        key={result.word}
+                                        className={styles.values}
+                                    >
+                                        <div>{result.word}</div>
+                                        <div>{result.attempts}</div>
+                                        <div>{result.correct}</div>
+                                        <div>{result.wrong}</div>
+                                    </div>
+                                )
+                            })
+                        ) : (
+                            <p className={styles.empty}>Ничего не найдено :)</p>
+                        )}
                     </div>
                 </div>
             </div>

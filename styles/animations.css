@@ -1,0 +1,85 @@
+@keyframes intro {
+    0% {
+        background: linear-gradient(to left, rgba(0, 50, 150, .5), var(--primary) 55%);
+    }
+
+    5% {
+        background: linear-gradient(to left, rgba(15, 50, 150, .5), var(--primary) 55%);
+    }
+
+    10% {
+        background: linear-gradient(to left, rgba(25, 50, 150, .5), var(--primary) 55%);
+    }
+
+    15% {
+        background: linear-gradient(to left, rgba(40, 50, 150, .5), var(--primary) 55%);
+    }
+
+    20% {
+        background: linear-gradient(to left, rgba(50, 50, 150, .5), var(--primary) 55%);
+    }
+
+    25% {
+        background: linear-gradient(to left, rgba(65, 50, 150, .5), var(--primary) 55%);
+    }
+
+    30% {
+        background: linear-gradient(to left, rgba(75, 50, 150, .5), var(--primary) 55%);
+    }
+
+    35% {
+        background: linear-gradient(to left, rgba(90, 50, 150, .5), var(--primary) 55%);
+    }
+
+    40% {
+        background: linear-gradient(to left, rgba(100, 50, 150, .5), var(--primary) 55%);
+    }
+
+    45% {
+        background: linear-gradient(to left, rgba(115, 50, 150, .5), var(--primary) 55%);
+    }
+
+    50% {
+        background: linear-gradient(to left, rgba(125, 50, 150, .5), var(--primary) 55%);
+    }
+
+    55% {
+        background: linear-gradient(to left, rgba(140, 50, 150, .5), var(--primary) 55%);
+    }
+
+    60% {
+        background: linear-gradient(to left, rgba(150, 50, 150, .5), var(--primary) 55%);
+    }
+
+    65% {
+        background: linear-gradient(to left, rgba(165, 50, 150, .5), var(--primary) 55%);
+    }
+
+    70% {
+        background: linear-gradient(to left, rgba(175, 50, 150, .5), var(--primary) 55%);
+    }
+
+    75% {
+        background: linear-gradient(to left, rgba(190, 50, 150, .5), var(--primary) 55%);
+    }
+
+    80% {
+        background: linear-gradient(to left, rgba(200, 50, 150, .5), var(--primary) 55%);
+    }
+
+    85% {
+        background: linear-gradient(to left, rgba(215, 50, 150, .5), var(--primary) 55%);
+    }
+
+    90% {
+        background: linear-gradient(to left, rgba(225, 50, 150, .5), var(--primary) 55%);
+    }
+
+    95% {
+        background: linear-gradient(to left, rgba(240, 50, 150, .5), var(--primary) 55%);
+    }
+
+    100% {
+        background: linear-gradient(to left, rgba(250, 50, 150, .5), var(--primary) 55%);
+    }
+}

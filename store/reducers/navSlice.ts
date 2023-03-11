@@ -7,6 +7,7 @@ interface NavItem {
 }
 
 interface NavState {
+    isVisible: boolean
     items: Array<NavItem>
     base: Array<NavItem>
     authorized: Array<NavItem>
@@ -16,6 +17,7 @@ interface NavState {
 const navSlice = createSlice({
     name: 'nav',
     initialState: {
+        isVisible: false,
         items: [],
         base: [
             {
@@ -34,22 +36,33 @@ const navSlice = createSlice({
                 id: 2,
                 label: 'Профиль',
                 link: '/profile'
+            },
+            {
+                id: 3,
+                label: 'Выйти',
+                link: '/login'
             }
         ],
         unauthorized: [
             {
-                id: 3,
+                id: 2,
                 label: 'Вход',
                 link: '/login'
             },
             {
-                id: 4,
+                id: 3,
                 label: 'Регистрация',
                 link: '/register'
             }
         ]
     },
-    reducers: {}
+    reducers: {
+        setIsVisible: (state) => {
+            state.isVisible = !state.isVisible
+        }
+    }
 })
+
+export const { setIsVisible } = navSlice.actions
 
 export default navSlice

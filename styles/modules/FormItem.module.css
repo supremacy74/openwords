@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 15px;
     position: relative;
+    height: 75px;
 }
 
 .input {
@@ -27,15 +28,14 @@
 }
 
 .input:focus ~ .visibilityIconWrapper {
-    top: 55%;
+    top: 20%;
     right: 15px;
 }
 
 .visibilityIconWrapper {
     position: absolute;
     right: 0;
-    top: 30%;
-    transform: translateY(-50%);
+    top: 10%;
     cursor: pointer;
 }
 

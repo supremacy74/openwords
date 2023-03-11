@@ -2,12 +2,13 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 
-type Data = {
-    dictionary: DictionaryInterface
-}
+import src from '@/images/some.jpg'
+
+type Data = DictionaryInterface
 
 const dictionary = {
     id: 30,
+    src,
     name: 'some',
     words: [
         'main',
@@ -27,5 +28,5 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    res.status(200).json({ dictionary })
+    res.status(200).json(dictionary)
 }

@@ -6,9 +6,7 @@ import get from '@/lib/get'
 
 import src from '@/images/some.jpg'
 
-type Data = {
-    dictionary: DictionaryInterface
-}
+type Data = DictionaryInterface
 
 export default async function handler(
     req: NextApiRequest,
@@ -16,6 +14,7 @@ export default async function handler(
 ) {
     const dictionary = {
         id: 4,
+        src,
         name: '400-500 (3000)',
         words: []
     }
@@ -24,5 +23,5 @@ export default async function handler(
 
     dictionary.words = data.dictionary.words.slice(400, 500)
 
-    res.status(200).json({ dictionary })
+    res.status(200).json(dictionary)
 }

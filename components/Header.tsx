@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux'
 import styles from '@/styles/modules/Header.module.css'
 
 import { RootState } from '@/store'
+
+import NavItemInterface from '@/interfaces/NavItemInterface'
 
 import Container from '@/layouts/Container'
 
@@ -22,7 +24,15 @@ const Header = () => {
         (state: RootState) => state.nav.unauthorized
     )
 
-    const [items, setItems] = useState([...authorized, ...unauthorized])
+    const [items, setItems] = useState<Array<NavItemInterface>>(unauthorized)
+
+    useEffect(() => {
+        if (localStorage.getItem('accessToken')) {
+            setItems(authorized)
+        } else {
+            setItems(unauthorized)
+        }
+    }, [])
 
     return (
         <header className={styles.header}>

@@ -7,9 +7,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import styles from '@/styles/modules/Dictionary.module.css'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
-import DemoInterface from '@/interfaces/DemoInterface'
+import DictionaryCardInterface from '@/interfaces/DictionaryCardInterface'
 
 import get from '@/lib/get'
+import shuffleArray from '@/lib/shuffleArray'
 
 import { RootState } from '@/store'
 
@@ -44,8 +45,8 @@ interface Paths {
 }
 
 export const getStaticPaths = async (): Promise<Paths> => {
-    const data = await get(url)
-    const dictionaries = data.dictionaries
+    const dictionaries = await get(url)
+
     const paths = dictionaries.map((id: number) => ({
         params: { id: String(id) }
     }))
@@ -65,12 +66,14 @@ export const getStaticProps = async ({
 }: {
     params: { id: string }
 }): Promise<Props> => {
-    const data = await get(`${url}/${params.id}`)
-    const dictionary = data.dictionary
+    const dictionary = await get(`${url}/${params.id}`)
+
+    const words = shuffleArray(dictionary.words)
 
     return {
         props: {
-            ...dictionary
+            ...dictionary,
+            words
         }
     }
 }

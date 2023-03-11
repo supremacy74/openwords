@@ -1,6 +1,11 @@
 .wrapper {
     min-height: 100vh;
     background: var(--primary);
+    overflow: hidden;
+}
+
+.scrollable {
+    overflow: initial;
 }
 
 .main {

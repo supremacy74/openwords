@@ -13,15 +13,15 @@ export default async function handler(
     res: NextApiResponse<Data>
 ) {
     const dictionary = {
-        id: 0,
+        id: 3,
         src,
-        name: '0-100 (3000)',
+        name: '300-400 (3000)',
         words: []
     }
 
     const data = await get(`http://localhost:3000/api/dictionaries/all`)
 
-    dictionary.words = data.dictionary.words.slice(0, 100)
+    dictionary.words = data.dictionary.words.slice(300, 400)
 
     res.status(200).json(dictionary)
 }

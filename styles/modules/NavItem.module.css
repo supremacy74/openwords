@@ -1,3 +1,9 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .link {
     color: var(--transparent-secondary-950);
     display: block;

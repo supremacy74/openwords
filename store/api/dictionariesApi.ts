@@ -1,21 +1,19 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const dictionariesApi = createApi({
+export const dictionariesApi = createApi({
     reducerPath: 'dictionariesApi',
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:3000/api/dictionaries/'
     }),
     endpoints: (builder) => ({
-        getAllDictionaries: builder.query({
+        getDictionaries: builder.query({
             query: () => ''
         }),
-        getDictionaryByName: builder.query({
-            query: (name: string) => name
+        getDictionary: builder.query({
+            query: (id: string) => id
         })
     })
 })
 
-export const { useGetAllDictionariesQuery, useGetDictionaryByNameQuery } =
+export const { useGetDictionariesQuery, useGetDictionaryQuery } =
     dictionariesApi
-
-export default dictionariesApi

@@ -1,3 +1,3 @@
-export default interface DemoInterface {
-    id: number
+export default interface DictionaryCardInterface {
+    id: any
 }

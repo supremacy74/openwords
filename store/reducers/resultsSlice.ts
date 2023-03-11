@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+import ResultInterface from '@/interfaces/ResultInterface'
+
 interface ResultsState {
     isHidden: boolean
     values: Array<ResultInterface>

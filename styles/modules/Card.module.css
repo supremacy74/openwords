@@ -62,6 +62,11 @@
     padding: 25px 0 200px;
 }
 
+.wrong,
+.wrong:focus {
+    border-color: rgba(255, 100, 100);
+}
+
 .hidden {
     position: fixed;
     bottom: -5000px;

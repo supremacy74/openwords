@@ -11,21 +11,22 @@
     z-index: 50;
     opacity: 100%;
     transition: 200ms all ease-in-out;
-
 }
 
 .container {
     display: flex;
-    padding: 50px 0;
+    padding: 50px 10px;
     flex-direction: column;
     gap: 50px;
-    width: max(500px, min(100%, 1200px));
+    width: min(100%, 1200px);
+    overflow: auto hidden;
 }
 
 .results {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    width: max(700px, 100%);
 }
 
 .results * {
@@ -85,4 +86,22 @@
 .hidden {
     top: -50000px;
     left: -500px;
+}
+
+.empty {
+    font-size: 2.15rem;
+    font-weight: 300;
+    padding: 50px 0;
+    color: rgba(50, 50, 50, .75);
+}
+
+@media (min-width: 768px) {
+    .empty {
+        font-size: 4.5rem;
+        text-align: center;
+    }
+
+    .container {
+        padding-inline: 0;
+    }
 }

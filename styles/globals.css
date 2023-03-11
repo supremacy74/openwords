@@ -21,3 +21,11 @@
 body {
     overflow: hidden scroll;
 }
+
+.non-scrollable {
+    overflow: hidden;
+}
+
+*::selection {
+    background-color: var(--transparent-accent-500);
+}

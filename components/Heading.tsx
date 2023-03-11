@@ -9,7 +9,7 @@ interface Props extends HeadingInterface {}
 const Heading: React.FC<Props> = ({ priority, children }) => {
     // const Tag = `h${priority}` as keyof JSX.IntrinsicElements
 
-    return <h2 className={`${styles.heading} ${styles['h2']}`}>{children}</h2>
+    return <h1 className={`${styles.heading} ${styles['h1']}`}>{children}</h1>
 }
 
 export default Heading

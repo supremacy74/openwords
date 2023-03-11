@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 
-import { router } from 'next/client'
+import { useDispatch, useSelector } from 'react-redux'
 
 import styles from '../styles/modules/Pop.module.css'
 
@@ -18,6 +18,7 @@ import { setIsHidden } from '@/store/reducers/popSlice'
 
 const Pop = () => {
     const dispatch = useDispatch()
+    const router = useRouter()
 
     const email = useSelector((state: RootState) => state.register.email)
     const password = useSelector((state: RootState) => state.register.password)

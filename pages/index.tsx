@@ -10,6 +10,8 @@ import Heading from '@/components/Heading'
 import Button from '@/components/Button'
 
 export default function Home() {
+    console.log(process.env.NEXT_PUBLIC_CLIENT_URL)
+
     return (
         <Wrapper>
             <Container>

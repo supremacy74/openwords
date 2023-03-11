@@ -3,7 +3,7 @@ import axios from 'axios'
 export default async (email: string, code: string) => {
     try {
         const response = await axios.post(
-            'http://localhost:5000/api/users/confirm',
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/confirm`,
             {
                 email,
                 code

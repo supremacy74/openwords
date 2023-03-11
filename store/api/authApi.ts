@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const authApi = createApi({
     reducerPath: 'authApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:5000/api/auth',
+        baseUrl: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth`,
         prepareHeaders: (headers, { getState }) => {
             let token = localStorage.getItem('accessToken')
 

@@ -8,7 +8,7 @@ export default async (
 ) => {
     try {
         const response = await axios.post(
-            'http://localhost:5000/api/auth/register',
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/register`,
             {
                 name: name,
                 surname: surname,

@@ -90,6 +90,8 @@ const DictionaryCard: React.FC<Props> = ({ id }) => {
         return <div>Loading</div>
     }
 
+    console.log(process.env.NEXT_PUBLIC_CLIENT_URL)
+
     return (
         <div className={styles.card}>
             <Image
@@ -100,7 +102,7 @@ const DictionaryCard: React.FC<Props> = ({ id }) => {
             <div className={styles.part}>
                 <h2 className={styles.name}>{dictionary.name}</h2>
                 <a
-                    href={`http://localhost:3000/dictionaries/${dictionary.id}`}
+                    href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dictionaries/${dictionary.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >

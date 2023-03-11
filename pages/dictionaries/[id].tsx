@@ -20,7 +20,7 @@ import Container from '@/layouts/Container'
 import Heading from '@/components/Heading'
 import Card from '@/components/Card'
 
-const url = `http://localhost:3000/api/dictionaries`
+const url = `${process.env.NEXT_PUBLIC_CLIENT_URL}/api/dictionaries`
 
 const Dictionary: React.FC<DictionaryInterface> = ({ name, words }) => {
     return (

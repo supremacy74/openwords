@@ -13,6 +13,7 @@ import { set } from '@/store/reducers/modeSlice'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
 import { useGetDataQuery } from '@/store/api/authApi'
 
 const dark = `

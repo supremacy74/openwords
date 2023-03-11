@@ -19,7 +19,9 @@ export default async function handler(
         words: []
     }
 
-    const data = await get(`http://localhost:3000/api/dictionaries/all`)
+    const data = await get(
+        `${process.env.NEXT_PUBLIC_CLIENT_URL}/api/dictionaries/all`
+    )
 
     dictionary.words = data.dictionary.words.slice(300, 400)
 

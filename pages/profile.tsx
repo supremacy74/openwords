@@ -1,20 +1,34 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router'
 
+import { useDispatch } from 'react-redux'
+
 import styles from '../styles/modules/Profile.module.css'
+
+import ResultInterface from '@/interfaces/ResultInterface'
+
+import get from '@/lib/others/get'
 
 import Wrapper from '@/layouts/Wrapper'
 import Container from '@/layouts/Container'
 
-import Heading from '@/components/Heading'
-
 import { useGetDataQuery } from '@/store/api/authApi'
+import { setVisibility } from '@/store/reducers/resultsSlice'
+
+import Heading from '@/components/Heading'
+import Results from '@/components/Results'
+import Button from '@/components/Button'
+import Stats from '@/components/Stats'
 
 const Profile = () => {
     const { data, error, isLoading, refetch } = useGetDataQuery({
         refetchOnMountOrArgChange: true
     })
+
+    const dispatch = useDispatch()
+
+    const [results, setResults] = useState<Array<ResultInterface>>([])
 
     const router = useRouter()
 
@@ -26,21 +40,32 @@ const Profile = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if (data) {
+            const fetchData = async () => {
+                const results = await get(
+                    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/results/byEmail?email=${data.email}`
+                )
+
+                setResults(results)
+            }
+
+            fetchData()
+        }
+    }, [data])
+
     if (isLoading) {
-        return <div>Loading</div>
+        return <div>Загрузка</div>
     }
 
     return (
         <Wrapper>
             <Container>
-                <Heading priority={1}>
+                <Heading>
                     {data?.name} {data?.surname}
                 </Heading>
-                <p>
-                    @{data?.name.toLowerCase()}
-                    {data?.id}
-                </p>
             </Container>
+            <Stats init={results} />
         </Wrapper>
     )
 }

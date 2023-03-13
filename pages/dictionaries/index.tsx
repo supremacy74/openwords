@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 import styles from '../../styles/modules/Dictionaries.module.css'
 
-import get from '@/lib/get'
-import groupIntoChunks from '@/lib/groupIntoChunks'
+import get from '@/lib/others/get'
+import groupIntoChunks from '@/lib/others/groupIntoChunks'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 import DictionaryCardInterface from '@/interfaces/DictionaryCardInterface'
@@ -45,14 +45,14 @@ const Dictionaries = () => {
     }
 
     if (isFetching) {
-        return <div>Loading</div>
+        return <div>Загрузка</div>
     }
 
     return (
         <Wrapper>
             <Container>
                 <div className={styles.inner}>
-                    <Heading priority={1}>Словари</Heading>
+                    <Heading>Словари</Heading>
                     <div className={styles.dictionaries}>
                         {dictionaries.length > 0 &&
                             chunks.map((chunk: Array<number>) => {
@@ -87,10 +87,12 @@ const DictionaryCard: React.FC<Props> = ({ id }) => {
     const { data: dictionary, isFetching } = useGetDictionaryQuery(String(id))
 
     if (isFetching) {
-        return <div>Loading</div>
+        if (id === 0) {
+            return <div>Загрузка</div>
+        } else {
+            return <div></div>
+        }
     }
-
-    console.log(process.env.NEXT_PUBLIC_CLIENT_URL)
 
     return (
         <div className={styles.card}>

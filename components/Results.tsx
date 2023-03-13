@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
+import styles from '../styles/modules/Results.module.css'
+
 import ResultsInterface from '@/interfaces/ResultsInterface'
 import ResultInterface from '@/interfaces/ResultInterface'
 
 import { RootState } from '@/store'
 import { setResults, setVisibility } from '@/store/reducers/resultsSlice'
+import { setIsScrollable } from '@/store/reducers/wrapperSlice'
 
-import styles from '../styles/modules/Results.module.css'
+import save from '@/lib/results/save'
 
 import CloseIcon from '@mui/icons-material/Close'
 import SearchIcon from '@mui/icons-material/Search'
+
+import { useGetDataQuery } from '@/store/api/authApi'
 
 interface Props extends ResultsInterface {}
 
@@ -25,31 +30,34 @@ const Results: React.FC<Props> = ({ init }) => {
     const [value, setValue] = useState('')
 
     useEffect(() => {
-        setValues([...results])
+        setValues(results)
     }, [results])
 
     useEffect(() => {
         search(value)
     }, [value])
 
-    const handle = () => {
+    const close = () => {
         dispatch(setVisibility())
         dispatch(setResults(init))
+        // dispatch(setIsScrollable())
     }
 
     const search = (word: string) => {
         setValues(
             results.filter((result) =>
-                result.word.toLowerCase().startsWith(word.toLowerCase())
+                result.word.toLowerCase().startsWith(word.trim().toLowerCase())
             )
         )
     }
+
+    const filter = (result: ResultInterface) => result.attempts > 0
 
     return (
         <>
             <button
                 className={`${styles.close} ${isHidden && styles.hidden}`}
-                onClick={() => handle()}
+                onClick={() => close()}
             >
                 <CloseIcon />
             </button>
@@ -71,8 +79,8 @@ const Results: React.FC<Props> = ({ init }) => {
                             <div>Кол. во правильных</div>
                             <div>Кол. во неправильных</div>
                         </div>
-                        {values.length > 0 ? (
-                            values.map((result) => {
+                        {values.filter(filter).length > 0 ? (
+                            values.filter(filter).map((result) => {
                                 return (
                                     <div
                                         key={result.word}

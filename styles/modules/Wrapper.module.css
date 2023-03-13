@@ -1,6 +1,6 @@
 .wrapper {
+    background: linear-gradient(90deg, rgba(200, 200, 250, .15), rgba(200, 250, 255, .15));
     min-height: 100vh;
-    background: var(--primary);
     overflow: hidden;
 }
 

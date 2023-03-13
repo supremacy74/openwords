@@ -7,6 +7,8 @@ export const authApi = createApi({
         prepareHeaders: (headers, { getState }) => {
             let token = localStorage.getItem('accessToken')
 
+            console.log(token)
+
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`)
             }

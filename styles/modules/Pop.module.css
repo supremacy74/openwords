@@ -65,7 +65,7 @@
 }
 
 .close:hover {
-    background: var(--transparent-secondary-950);
+    background: var(--transparent-accent-850);
 }
 
 .close:hover svg {

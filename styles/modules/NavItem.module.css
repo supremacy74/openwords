@@ -13,7 +13,6 @@
 }
 
 .link:hover {
-    background: var(--transparent-primary-500);
     color: var(--secondary);
     transition: var(--transition);
 }

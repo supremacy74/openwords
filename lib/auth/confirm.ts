@@ -11,8 +11,8 @@ export default async (email: string, code: string) => {
         )
 
         return response.data
-    } catch (error) {
-        console.error(error)
+    } catch (e) {
+        console.log(e)
         return null
     }
 }

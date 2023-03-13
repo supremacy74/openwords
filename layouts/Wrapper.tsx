@@ -20,29 +20,32 @@ const dark = `
     :root {
         --primary: #050505;
         --secondary: #f5f5f5;
-        --accent: rgb(200, 250, 255);
-        --wrong: rgba(255, 50, 100, .85);
+        --accent: rgb(210, 150, 205);
+        --wrong: rgba(255, 50, 100, .95);
         
         --transparent-secondary-950: rgba(250, 250, 250, .95);        
         --transparent-primary-950: rgba(10, 10, 10, .95);
         
         --transparent-secondary-850: rgba(250, 250, 250, .85);        
         --transparent-primary-850: rgba(10, 10, 10, .85);
+        --transparent-accent-850: rgba(210, 150, 205, .85);
         
         --transparent-secondary-750: rgba(250, 250, 250, .75);        
         --transparent-primary-750: rgba(10, 10, 10, .75);
                 
         --transparent-primary-500: #05050550;
         --transparent-secondary-500: #f5f5f550;
-        --transparent-accent-500: rgba(200, 250, 255, .50);
+        --transparent-accent-500: rgba(210, 150, 205, .50);
 
-        --transparent-accent-300: rgba(200, 250, 255, .30);
+        --transparent-secondary-300: rgba(250, 250, 250, .30);        
+        --transparent-primary-300: rgba(10, 10, 10, .30);
+        --transparent-accent-300: rgba(210, 150, 205 .30);
         
-        --transparent-accent-200: rgba(200, 250, 255, .20);
+        --transparent-accent-200: rgba(210, 150, 205 .20);
 
         --transparent-primary-100: #05050510;
         --transparent-secondary-100: #f5f5f525;
-        --transparent-accent-100: rgba(200, 250, 255, .10);
+        --transparent-accent-100: rgba(210, 150, 205, .10);
     }
 `
 
@@ -50,29 +53,32 @@ const light = `
     :root {
         --primary: #f5f5f5;
         --secondary: #151515;
-        --accent: rgb(150, 150, 245);
-        --wrong: rgba(255, 150, 200, .85);
+        --accent: rgb(255, 10, 110);
+        --wrong: rgba(255, 150, 175, .95);
       
         --transparent-primary-950: rgba(250, 250, 250, .95);        
         --transparent-secondary-950: rgba(10, 10, 10, .95);
         
         --transparent-primary-850: rgba(250, 250, 250, .85);        
         --transparent-secondary-850: rgba(10, 10, 10, .85);
+        --transparent-accent-850: rgba(255, 10, 110, .85);
         
         --transparent-primary-750: rgba(250, 250, 250, .75);        
         --transparent-secondary-750: rgba(10, 10, 10, .75);
 
         --transparent-primary-500: #f5f5f550;        
         --transparent-secondary-500: #05050550;
-        --transparent-accent-500: rgba(190, 190, 245, .50);
+        --transparent-accent-500: rgba(255, 10, 110, .50);
         
-        --transparent-accent-300: rgba(190, 190, 245, .30);
+        --transparent-secondary-300: rgba(10, 10, 10, .30);
+        --transparent-primary-300: rgba(250, 250, 250, .30);        
+        --transparent-accent-300: rgba(255, 10, 110, .30);
         
-        --transparent-accent-200: rgba(190, 190, 245, .20);
+        --transparent-accent-200: rgba(255, 10, 110, .20);
         
         --transparent-primary-100: #f5f5f510;        
         --transparent-secondary-100: #05050510;
-        --transparent-accent-100: rgba(190, 190, 245, .10);
+        --transparent-accent-100: rgba(255, 10, 110, .10);
     }
 `
 
@@ -108,16 +114,6 @@ const Wrapper: React.FC<Props> = ({ children }) => {
             }
         }
     }, [])
-
-    useEffect(() => {
-        if (!data && localStorage.getItem('accessToken')) {
-            console.log(data)
-
-            router.push('/')
-
-            localStorage.removeItem('accessToken')
-        }
-    }, [data])
 
     useEffect(() => {
         if (isVisible) {

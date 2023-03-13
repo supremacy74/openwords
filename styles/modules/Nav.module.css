@@ -4,7 +4,7 @@
     right: 0;
     background: linear-gradient(to top, rgba(200, 250, 255, .5), rgba(200, 200, 255, .5));
     backdrop-filter: blur(50px);
-    z-index: 45;
+    z-index: 300;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -14,6 +14,24 @@
 
 .desktop {
     display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    background: var(--transparent-primary-500);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible + .overlay {
+    opacity: 100%;
+    z-index: 250;
+    pointer-events: auto;
 }
 
 .mobile {
@@ -64,12 +82,12 @@
     aspect-ratio: 1 / 1;
 }
 
-.iconWrapper:hover {
-    filter: invert(25%);
+.iconWrapper:hover svg {
+    fill: var(--accent);
 }
 
 .menuIconWrapper_color_primary {
-    z-index: 50;
+    z-index: 350;
     top: 25px;
     right: 15px;
     position: fixed;
@@ -85,6 +103,10 @@
         width: fit-content;
         gap: 50px;
         flex-direction: row;
+    }
+
+    .buttons {
+        background: none;
     }
 
     .desktop {

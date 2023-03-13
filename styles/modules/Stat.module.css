@@ -1,0 +1,16 @@
+.item {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary);
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: var(--transparent-primary-100);
+    padding: 25px;
+    border-radius: 100px;
+}

@@ -10,8 +10,8 @@ import CloseIcon from '@mui/icons-material/Close'
 
 import Heading from '@/components/Heading'
 
-import confirm from '@/lib/confirm'
-import login from '@/lib/login'
+import confirm from '@/lib/auth/confirm'
+import login from '@/lib/auth/login'
 
 import { RootState } from '@/store'
 import { setIsHidden } from '@/store/reducers/popSlice'
@@ -37,8 +37,6 @@ const Pop = () => {
                     dispatch(setIsHidden())
 
                     const result = await login(email, password)
-
-                    console.log(result)
 
                     router.push('/profile')
                 } else {

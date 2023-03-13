@@ -13,8 +13,8 @@ import Heading from '@/components/Heading'
 import Form from '@/components/Form'
 import Pop from '@/components/Pop'
 
-import register from '@/lib/register'
-import login from '@/lib/login'
+import register from '@/lib/auth/register'
+import login from '@/lib/auth/login'
 
 import { RootState } from '@/store'
 import { setIsWrong } from '@/store/reducers/loginSlice'
@@ -72,7 +72,7 @@ const Register = () => {
     return (
         <Wrapper>
             <Container isWrapper={true}>
-                <Heading priority={1}>Регистрация</Heading>
+                <Heading>Регистрация</Heading>
                 <Form
                     items={formItems}
                     buttonText="Создать аккаунт"

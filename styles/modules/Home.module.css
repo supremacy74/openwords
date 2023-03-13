@@ -1,3 +1,9 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -47,6 +53,10 @@
 }
 
 @media (min-width: 992px) {
+    .inner {
+        gap: 200px;
+    }
+
     .introContent {
         gap: 50px;
     }

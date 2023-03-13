@@ -7,14 +7,19 @@ import axios from 'axios'
 import styles from '@/styles/modules/Card.module.css'
 
 import CardInterface from '@/interfaces/CardInterface'
+import ResultInterface from '@/interfaces/ResultInterface'
 
 import { Dictionary } from '@/interfaces/Yandex.Dictionary/Dictionary'
 
 import { RootState } from '@/store'
 import { setResults, setVisibility } from '@/store/reducers/resultsSlice'
+import { setIsScrollable } from '@/store/reducers/wrapperSlice'
 
-import get from '@/lib/get'
-import parse from '@/lib/parse'
+import { useGetDataQuery } from '@/store/api/authApi'
+
+import get from '@/lib/others/get'
+import parse from '@/lib/others/parse'
+import save from '@/lib/results/save'
 
 import Button from '@/components/Button'
 import Definition from '@/components/Definition'
@@ -35,6 +40,10 @@ const Card: React.FC<Props> = ({ words }) => {
         lang: 'en-ru',
         text: words[index],
         ui: 'ru'
+    })
+
+    const { data, error, isLoading, refetch } = useGetDataQuery({
+        refetchOnMountOrArgChange: true
     })
 
     const results = useSelector((state: RootState) => state.results.values)
@@ -77,13 +86,14 @@ const Card: React.FC<Props> = ({ words }) => {
     useEffect(() => {
         if (dictionary.def) {
             setValues(parse(dictionary))
-            console.log(dictionary)
         }
     }, [dictionary])
 
     const check = (hasValue: boolean) => {
         if (translation.length > 0) {
-            const output = JSON.parse(JSON.stringify(results))
+            const output: Array<ResultInterface> = JSON.parse(
+                JSON.stringify(results)
+            )
 
             output[index].attempts += 1
 
@@ -98,7 +108,9 @@ const Card: React.FC<Props> = ({ words }) => {
     }
 
     const handle = () => {
-        const hasValue = values.includes(translation)
+        const hasValue = values
+            .map((value) => value.toLowerCase())
+            .includes(translation.trim().toLowerCase())
 
         setTranslation('')
 
@@ -115,6 +127,18 @@ const Card: React.FC<Props> = ({ words }) => {
     const finish = () => {
         if (index > 0) {
             dispatch(setVisibility())
+            // dispatch(setIsScrollable())
+
+            if (data) {
+                const fetchData = async () => {
+                    const result = await save(
+                        data.email,
+                        results.filter((result) => result.attempts > 0)
+                    )
+                }
+
+                fetchData()
+            }
         }
     }
 
@@ -138,6 +162,7 @@ const Card: React.FC<Props> = ({ words }) => {
                             }`}
                             autoFocus={true}
                             value={translation}
+                            maxLength={30}
                             onChange={(event) => {
                                 setTranslation(event.target.value)
                                 setIsWrong(false)

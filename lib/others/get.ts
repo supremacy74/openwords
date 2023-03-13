@@ -5,7 +5,7 @@ export default async (url: string) => {
         const response = await axios.get(url)
         return response.data
     } catch (e) {
-        console.error(e)
-        return []
+        console.log(e)
+        return null
     }
 }

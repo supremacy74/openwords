@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 
-import get from '@/lib/get'
+import get from '@/lib/others/get'
 
 import src from '@/images/some.jpg'
 

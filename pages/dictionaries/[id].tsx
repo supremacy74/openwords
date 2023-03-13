@@ -9,8 +9,8 @@ import styles from '@/styles/modules/Dictionary.module.css'
 import DictionaryInterface from '@/interfaces/DictionaryInterface'
 import DictionaryCardInterface from '@/interfaces/DictionaryCardInterface'
 
-import get from '@/lib/get'
-import shuffleArray from '@/lib/shuffleArray'
+import get from '@/lib/others/get'
+import shuffleArray from '@/lib/others/shuffleArray'
 
 import { RootState } from '@/store'
 
@@ -27,7 +27,7 @@ const Dictionary: React.FC<DictionaryInterface> = ({ name, words }) => {
         <Wrapper>
             <Container>
                 <div className={styles.inner}>
-                    <Heading priority={1}>{name}</Heading>
+                    <Heading>{name}</Heading>
                     <Card words={words} />
                 </div>
             </Container>

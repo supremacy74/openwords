@@ -12,7 +12,7 @@ import Heading from '@/components/Heading'
 import Form from '@/components/Form'
 import Container from '@/layouts/Container'
 
-import login from '@/lib/login'
+import login from '@/lib/auth/login'
 
 import { RootState } from '@/store'
 import { setIsWrong } from '@/store/reducers/loginSlice'
@@ -46,6 +46,8 @@ const Login = () => {
 
         const data = await login(email, password)
 
+        console.log(data)
+
         if (data) {
             router.push('/profile')
         } else {
@@ -56,7 +58,7 @@ const Login = () => {
     return (
         <Wrapper>
             <Container isWrapper={true}>
-                <Heading priority={1}>Авторизация</Heading>
+                <Heading>Авторизация</Heading>
                 <Form items={formItems} buttonText="Войти" onClick={onClick} />
             </Container>
         </Wrapper>

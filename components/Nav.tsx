@@ -37,7 +37,6 @@ const Nav: React.FC<Props> = ({ base, items }) => {
         setTimeout(() => {
             const value = store.getState().mode.value
             localStorage.setItem('mode', value)
-            console.log(value, localStorage.getItem('mode'))
         }, 0)
     }
 
@@ -104,6 +103,7 @@ const Nav: React.FC<Props> = ({ base, items }) => {
                     </li>
                 </ul>
             </nav>
+            <div className={styles.overlay}></div>
         </>
     )
 }

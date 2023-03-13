@@ -5,8 +5,8 @@ export default async (email: string, password: string) => {
         const response = await axios.post(
             `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/login`,
             {
-                email: email,
-                password: password
+                email,
+                password
             }
         )
 
@@ -17,8 +17,8 @@ export default async (email: string, password: string) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
         return response.data
-    } catch (error) {
-        console.error(error)
+    } catch (e) {
+        console.log(e)
         return null
     }
 }
